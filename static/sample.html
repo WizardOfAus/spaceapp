@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
-    <script src="{{ url_for('static', filename='jquery-3.1.1.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='space.css') }}">
+    <meta charset="UTF-8" />
+    <title>HTML5 Canvas</title>
+    <link rel="stylesheet" href="space.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
 
   <body>
-    <canvas id="draw" width="2080" height="2320"></canvas>
-    <script src="{{ url_for('static', filename='universe.js') }}"></script>
+    <canvas id="draw" tabindex="1"></canvas>
+    <script src="universe.js"></script>
     <div id="add_object_form">
       <form name="add_object" id="add_object">
+        <fieldset>
           <div id="pos_input">
             <label id="pos_label">Position</label>
             <input type="number" name="xpos_input" id="xpos_input" size=5 value="" disabled />
             <input type="number" name="ypos_input" id="ypos_input" size=5 value="" disabled />
+          </div>
+          <div id="speed_input">
+            <label for="speed" id="speed_label">Speed</label>
+            <input type="number" name="speed" id="speed" size="15" value="" class="text-input" />
           </div>
           <div id="name_input">
             <label for="name" id="name_label">Name</label>
@@ -28,10 +33,6 @@
               class="text-input"
             />
           </div>
-          <div id="speed_input">
-            <label for="speed" id="speed_label">Speed</label>
-            <input type="number" name="speed" id="speed" size="15" value="" class="text-input" />
-          </div>
           <div id="size_input">
             <label for="size" id="size_label">Size</label>
             <input
@@ -43,7 +44,8 @@
               class="text-input"
             />
           </div>
-          <!-- <div id="color_input">
+
+          <div id="color_input">
             <label for="color" id="color_label">Color</label>
             <input
               type="color"
@@ -52,7 +54,7 @@
               size="30"
               class="text-input"
             />
-          </div> -->
+          </div>
           <input
             type="button"
             name="create"
@@ -74,8 +76,9 @@
             id="cancel_btn"
             value="Cancel"
           />
+        </fieldset>
       </form>
     </div>
   </body>
-
 </html>
+
